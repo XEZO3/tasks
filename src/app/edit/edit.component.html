@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <form [formGroup]="editForm" (ngSubmit)="Update()">
+        <mat-form-field style="margin-left: 10px;margin-right: 10px;">
+            <mat-label>Title</mat-label>
+            <input matInput name="name"  [value]="taskModel.Title"  formControlName="Title" >
+        </mat-form-field>
+        <mat-form-field style="margin-left: 10px;margin-right: 10px;">
+            <mat-label>Descreption</mat-label>
+            <input matInput name="name" [value]="taskModel.Description"  formControlName="Descreption" >
+        </mat-form-field>
+        <mat-radio-group formControlName="Complation" aria-label="Select an option">
+            <mat-label>Complation:   </mat-label>
+            <mat-radio-button value="Not Started">Not Started</mat-radio-button>
+            <mat-radio-button value="in progress">in progress</mat-radio-button>
+            <mat-radio-button value="completed">completed</mat-radio-button>
+          </mat-radio-group>
+        <button mat-raised-button type="submit" mat-raised-button color="primary">Update</button>       
+      </form>
+      <a [routerLink]="['/Tasks']" mat-raised-button color="primary">Back to the list</a>
+    </div>
+  </div>
