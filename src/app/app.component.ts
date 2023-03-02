@@ -9,10 +9,11 @@ import { Route, Router } from '@angular/router';
 export class AppComponent implements OnInit {
   constructor(private router:Router){}
   ngOnInit(): void {
-   
+   console.log(this.router.url)
   }
   title = 'tasks';
   LogOut(){
-    localStorage.clear
+    localStorage.removeItem("Token")
+    this.router.navigate([''])
   }
 }
